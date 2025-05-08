@@ -9,7 +9,7 @@ TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: .inf
 
 # Genesis
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 16
-MIN_GENESIS_TIME: 1746687600
+MIN_GENESIS_TIME: 1746703800
 GENESIS_FORK_VERSION: 0x0000006f
 GENESIS_DELAY: 300
 
@@ -101,3 +101,13 @@ MIN_EPOCHS_FOR_DATA_COLUMN_SIDECARS_REQUESTS: 16384
 
 # EIP7732
 MAX_REQUEST_PAYLOADS: 128
+
+
+
+
+
+./build/bin/geth --metalayer --authrpc.jwtsecret  --http --http.api eth,net,web3 --authrpc.addr=127.0.0.1 --authrpc.port=8553 --authrpc.vhosts=* --datadir ~/gnosis-poc/metalayer/node-3/el --discovery.port 30305 --http.port 8547 --port 30305 --bootnodes enode://da29540f7dbaf23dfba79785a6a5bbf53b81a0596ba829de50820b7b7cd7109e8d614f01a1a39379f7dca8546ac5e07dcadd37333cd0ffb35a1630e29a59f3de@127.0.0.1:30303
+
+./lodestar beacon --dataDir=../metalayer/node-1/cl --jwtSecret=../jwt-secret/jwt1.secret --execution.urls=http://127.0.0.1:8551 --network chiado --discv5=true --rest.port=4000 --rest=true --port=9001 --bootnodes enr:-Hy4QIf0Nb3qfubc81ix5F6uG4t3izq8_0WahbBS4Ki0QW2YMmx6rmXhWjSViupWRrX7nx8Jz3_4xSIW89zlhdJzZKgBgmlkgnY0iXNlY3AyNTZrMaEDcJuOlUhF184DrUrV2y0AXCNKIPr0yM2MECaUDB11wKKDdWRwgiMo --persistNetworkIdentity true --enr.ip 127.0.0.1 --enr.udp 9001  --discoveryPort 9001 --mdns true
+./lodestar beacon --dataDir=../metalayer/node-2/cl --jwtSecret=../jwt-secret/jwt2.secret --execution.urls=http://127.0.0.1:8552 --network chiado --discv5=true --rest.port=4002 --rest=true --port=9002 --bootnodes enr:-Hy4QIf0Nb3qfubc81ix5F6uG4t3izq8_0WahbBS4Ki0QW2YMmx6rmXhWjSViupWRrX7nx8Jz3_4xSIW89zlhdJzZKgBgmlkgnY0iXNlY3AyNTZrMaEDcJuOlUhF184DrUrV2y0AXCNKIPr0yM2MECaUDB11wKKDdWRwgiMo --persistNetworkIdentity true --enr.ip 127.0.0.1 --enr.udp 9002  --discoveryPort 9002 --mdns true
+./lodestar beacon --dataDir=../metalayer/node-3/cl --jwtSecret=../jwt-secret/jwt3.secret --execution.urls=http://127.0.0.1:8553 --network chiado --discv5=true --rest.port=4004 --rest=true --port=9003 --bootnodes enr:-Hy4QIf0Nb3qfubc81ix5F6uG4t3izq8_0WahbBS4Ki0QW2YMmx6rmXhWjSViupWRrX7nx8Jz3_4xSIW89zlhdJzZKgBgmlkgnY0iXNlY3AyNTZrMaEDcJuOlUhF184DrUrV2y0AXCNKIPr0yM2MECaUDB11wKKDdWRwgiMo --persistNetworkIdentity true --enr.ip 127.0.0.1 --enr.udp 9003  --discoveryPort 9003 --mdns true
